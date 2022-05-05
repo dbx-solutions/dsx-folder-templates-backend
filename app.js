@@ -9,31 +9,28 @@ import { createFileRequestBatch } from './node_modules/dsx-core/src/resources/dr
 
 
 const app = express();
-const token = 'sl.BHBMeZmRv7azeGTp6xcXoFT1qh-vg2KmNGX9uPqxr_VLQm2GcNWXH0S0hKtfyKnfgIvkf-1cDZEn37cX4j840Qb_cFLfNbsSX-ZGuCsrg56LIwonFRuUtf98eTkC7WKb84CGG0Yjg7YSxQIloMs';
+const token = 'sl.BHCN9zXPhRRO0WA2Y1CHQYy69CcxE47q2GCDHZvcrOGA75Hpoa3W94NYhsdyzOeIsXfmUqxmntQ4SbxB0WIhZ-LXZvOwGwOC3skk1xQjZT1-rreMwSYrnRfjCygqNwBrJGxFWWtfu49SLK5UXTI';
 
 const clientId = '4jadbzm3a71wkfb';
-const redirectUri = 'http://localhost:8080/auth';
+const redirectUri = 'http://localhost:3000/auth';
 const dbxAuth = createDbxAuth(clientId);
 
-app.get('/', (req, res) => {
-  res.send('DSX Folder Templates')
+app.get('/main', (req, res) => {
+  res.json({message: "DSX folder templates"})
 });
 
 app.get('/login', (req, res) => {
 	getAuthUrl(dbxAuth, redirectUri).then((authUrl) => {
-			console.log(authUrl)
-			res.writeHead(302, { Location: authUrl });
-			res.end();
-	})
+		res.json({url: authUrl})
+	});
 });
 
-app.get('/auth', (req, res) => {
+app.get('/token', (req, res) => {
 	const { code } = req.query;
 
 	getAuthTokenFromCode(dbxAuth, redirectUri, code).then((response) => {
-			console.log(response.result.access_token)
-			res.writeHead(302, { Location: '/' });
-			res.end();
+		console.log(response.result.access_token);
+		res.json({message: "done!"})
 	})
 });
 
