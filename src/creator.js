@@ -3,9 +3,8 @@ import { createTagBatch } from '../node_modules/dsx-core/src/resources/dropbox/u
 import { createFileRequestBatch } from '../node_modules/dsx-core/src/resources/dropbox/user/fileRequest/fileRequest.js';
 import { parserSubFolders } from './parser.js';
 
-export function createFromTemplate(template, rootName) {
+export function createFromTemplate(template, rootName, token) {
   const userId = 'dbmid:AAC-CvicHJKg7ND_MGrDqgxm1rBa0lmWV28'
-  const token = 'sl.BHDvvrJrwN8ZYLbewQ00MvxaBxiZpgS7g6G6pVDKF7zlvwd0NtTt4R15HNmjV-z9d2a6SdbDQGsJyJrffA6xvSpSihU52VNkMIg9vuxuiiCgru5rroleK0bxvTDGj1ufcwMWezS163HoObdZolU';
 	const dbx = createDbxAsUser(token, userId);
 
 	const rootPath = template.root.path + rootName;
@@ -20,5 +19,6 @@ export function createFromTemplate(template, rootName) {
 		.then(() => {
 			createFileRequestBatch(dbx, subFolderFileRequests)
 		})
+		.catch((error) => console.error(error.message));
 	})
 }

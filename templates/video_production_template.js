@@ -1,7 +1,7 @@
 export default {
   'name': 'Video production',
   'root': {
-    'name': 'Video Production',
+    'folder_type': 'team',
     'path': '/Projects/2022/'
   },
   'sub_folders': [
@@ -29,10 +29,7 @@ export default {
     },
   ],
   'members': [
-    'hussam@hanfordinc.com',
-    'hussam+albert-einstein@hanfordinc.com'
   ],
   'groups': [
-    'Technokings'
   ]
 }
