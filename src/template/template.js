@@ -1,4 +1,18 @@
-import { templateKeys } from "./config.js";
+import { TEMPLATE_KEYS } from "./config.js";
+import templates from '../../templates/templates.js';
+
+export function listTemplates() {
+  const availableTemplates = [];
+
+  for (var key in templates) {
+    availableTemplates.push({
+      label: templates[key].name,
+      value: key
+    });
+  }
+
+  return availableTemplates;
+}
 
 export function parseTemplate(rootName, rootPath, subFolders) {
   let paths = [];
@@ -7,9 +21,9 @@ export function parseTemplate(rootName, rootPath, subFolders) {
 
   subFolders.forEach(subFolder => {
     const subFolderPath = rootPath + '/' + subFolder.name;
-    const hasSubFolders = templateKeys.subFolders in subFolder;
-    const hasTags = templateKeys.tags in subFolder;
-    const hasFileRequest = templateKeys.file_requests in subFolder;
+    const hasSubFolders = TEMPLATE_KEYS.SUB_FOLDERS in subFolder;
+    const hasTags = TEMPLATE_KEYS.TAGS in subFolder;
+    const hasFileRequest = TEMPLATE_KEYS.FILE_REQUEST in subFolder;
 
     paths.push(subFolderPath);
     if (hasSubFolders) {

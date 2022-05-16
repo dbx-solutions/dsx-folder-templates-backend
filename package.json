@@ -29,7 +29,7 @@
   },
   "main": "main.js",
   "dependencies": {
-    "dsx-core": "^0.0.5",
+    "dsx-core": "^0.0.9",
     "express": "^4.18.1"
   },
   "scripts": {

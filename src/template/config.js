@@ -1,5 +1,5 @@
-export const templateKeys = {
-  subFolders: 'sub_folders',
-  tags: 'tags',
-  file_requests: 'file_requests'
+export const TEMPLATE_KEYS = {
+  SUB_FOLDERS: 'sub_folders',
+  TAGS: 'tags',
+  FILE_REQUEST: 'file_request'
 };
