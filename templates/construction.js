@@ -1,7 +1,7 @@
 export default {
   'name': 'Construction project',
   'root': {
-    'folder_type': 'shared',
+    'folder_type': 'simple',
     'path': '/Construction/2022/'
   },
   'sub_folders': [
@@ -20,9 +20,5 @@ export default {
       'name': 'Finances',
       'tags': ['confidential'],
     },
-  ],
-  'members': [
-  ],
-  'groups': [
   ]
 }

@@ -1,7 +1,7 @@
 export default {
   'name': 'Video production',
   'root': {
-    'folder_type': 'team',
+    'folder_type': 'simple',
     'path': '/Projects/2022/'
   },
   'sub_folders': [
@@ -27,9 +27,5 @@ export default {
         }
       ]
     },
-  ],
-  'members': [
-  ],
-  'groups': [
   ]
 }

@@ -1,9 +1,9 @@
 import express from 'express';
+import fs from 'fs';
 import { createDbxAuth } from './node_modules/dsx-core/src/util/dbx/dbx.js';
 import { getAuthTokenFromCode, getAuthUrl } from './node_modules/dsx-core/src/util/auth/auth.js';
+import { createFromTemplate } from './src/template/creator.js';
 import templates from './templates/templates.js';
-import { createFromTemplate } from './src/creator.js';
-import fs from 'fs';
 
 const app = express();
 const clientId = '4jadbzm3a71wkfb';
@@ -40,7 +40,9 @@ app.get('/template', (req, res) => {
 	const { rootName } = req.query;
 	fs.readFile('token.txt', 'utf8', function(err, data) {
 		const token = data.toString();
-		createFromTemplate(templates[templateName], rootName, token);
+		const userId = 'dbmid:AAC-CvicHJKg7ND_MGrDqgxm1rBa0lmWV28'
+		const dbx = createDbxAsUser(token, userId);
+		createFromTemplate(templates[templateName], rootName, dbx);
 	})
 });
 
