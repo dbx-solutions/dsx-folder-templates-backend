@@ -1,4 +1,4 @@
-import { createRoutes, listen } from './src/router/router.js';
+import { createRoutes, run } from './src/router/router.js';
 
 createRoutes()
-listen()
+run()

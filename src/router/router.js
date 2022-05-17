@@ -6,6 +6,8 @@ import templates from '../../templates/templates.js';
 import { getAuthTokenFromCode, getAuthUrl, storeAuthToken } from '../auth/auth.js';
 import { createStructureFromTemplate } from '../../src/structure/structure.js';
 import { listTemplates } from '../../src/template/template.js';
+import { listMembers } from '../../node_modules/dsx-core/src/resources/dropbox/team/member/member.js';
+import { createDbxAsTeam } from '../../node_modules/dsx-core/src/util/dbx/dbx.js';
 
 const app = express();
 
@@ -25,8 +27,8 @@ export function createRoutes() {
 
     getAuthTokenFromCode(code)
     .then((authTokenResponse) => {
-      storeAuthToken(authTokenResponse.result.access_token)
-      res.json({message: "done!"})
+      storeAuthToken(authTokenResponse.result.access_token);
+      res.end();
     })
     .catch((error) =>
       console.error(error.message)
@@ -35,7 +37,7 @@ export function createRoutes() {
 
   app.get(routes.templateList, (req, res) => {
     res.json({templateList: listTemplates()})
-  })
+  });
 
   app.get(routes.structureCreate, (req, res) => {
     const { templateName, rootName } = req.query;
@@ -44,8 +46,19 @@ export function createRoutes() {
       createStructureFromTemplate(templates[templateName], rootName, authToken.toString(), config.USER_ID);
     })
   });
+
+  app.get('/members', (req, res) => {
+    fs.readFile('token.txt', 'utf8', function(err, authToken) {
+      const dbx = createDbxAsTeam(authToken.toString());
+      const members = listMembers(dbx)
+      .then((members) => {
+        console.log(members);
+      });
+    })
+
+  });
 }
 
-export function listen() {
+export function run() {
   app.listen(config.PORT);
 }

@@ -6,6 +6,6 @@ export const routes = {
   // template
   templateList: '/templates',
 
-  // structure
+  // folder structure
   structureCreate: '/structures'
 }

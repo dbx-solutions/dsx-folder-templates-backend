@@ -18,5 +18,6 @@ export function storeAuthToken(authToken) {
     if (err) {
       console.error(err);
     }
+
   });
 }
