@@ -1,2 +1,4 @@
-export const PORT = 8080;
-export const USER_ID = 'dbmid:AAC-CvicHJKg7ND_MGrDqgxm1rBa0lmWV28'
+import 'dotenv/config';
+
+export const PORT = process.env.PORT;
+export const USER_ID = process.env.USER_ID;

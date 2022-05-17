@@ -55,10 +55,9 @@ export function createRoutes() {
         console.log(members);
       });
     })
-
   });
 }
 
 export function run() {
-  app.listen(config.PORT);
+  app.listen(process.env.PORT);
 }
