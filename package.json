@@ -1,39 +1,39 @@
 {
-  "name": "dsx-folder-templates",
-  "version": "0.0.1",
-  "type": "module",
-  "description": "A use case of the Dropbox Solutions Accelerators. This solution creates folder structures from pre-defined templates. This is the backend app.",
-  "keywords": [
-    "dropbox",
-    "accelerators",
-    "dsx",
-    "folder template",
-    "folder structure",
-    "backend"
-  ],
-  "license": "MIT",
-  "repository": {
-    "type": "git",
-    "url": "https://github.com/dbx-solutions/dsx-folder-templates.git"
-  },
-  "homepage": "https://github.com/dbx-solutions/dsx-folder-templates#readme",
-  "bugs": {
-    "url": "https://github.com/dbx-solutions/dsx-folder-templates/issues"
-  },
-  "author": "Dropbox Solutions Team",
-  "contributors": [
-    "Hussam Hebbo <hussam@dropbox.com>"
-  ],
-  "engines": {
-    "node": ">=0.10.3"
-  },
-  "main": "main.js",
-  "dependencies": {
-    "dotenv": "^16.0.1",
-    "dsx-core": "^0.0.9",
-    "express": "^4.18.1"
-  },
-  "scripts": {
-    "start": "node main.js"
-  }
+	"name": "dsx-folder-templates",
+	"version": "0.0.1",
+	"type": "module",
+	"description": "A use case of the Dropbox Solutions Accelerators. This solution creates folder structures from pre-defined templates. This is the backend app.",
+	"keywords": [
+		"dropbox",
+		"accelerators",
+		"dsx",
+		"folder template",
+		"folder structure",
+		"backend"
+	],
+	"license": "MIT",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/dbx-solutions/dsx-folder-templates.git"
+	},
+	"homepage": "https://github.com/dbx-solutions/dsx-folder-templates#readme",
+	"bugs": {
+		"url": "https://github.com/dbx-solutions/dsx-folder-templates/issues"
+	},
+	"author": "Dropbox Solutions Team",
+	"contributors": [
+		"Hussam Hebbo <hussam@dropbox.com>"
+	],
+	"engines": {
+		"node": ">=0.10.3"
+	},
+	"main": "main.js",
+	"dependencies": {
+		"dotenv": "^16.0.1",
+		"dsx-core": "^0.0.10",
+		"express": "^4.18.1"
+	},
+	"scripts": {
+		"start": "nodemon main.js"
+	}
 }

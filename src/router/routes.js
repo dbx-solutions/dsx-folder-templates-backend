@@ -1,11 +1,11 @@
 export const routes = {
-  // auth
-  authUrl: '/auth/url',
-  authToken: '/auth/token',
+	// auth
+	authUrl: '/auth/url',
+	authToken: '/auth/token',
 
-  // template
-  templateList: '/templates',
+	// template
+	templateList: '/templates',
 
-  // folder structure
-  structureCreate: '/structures'
-}
+	// folder structure
+	structureCreate: '/structures',
+};
