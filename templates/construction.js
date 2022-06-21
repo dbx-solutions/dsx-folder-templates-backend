@@ -2,7 +2,7 @@ export default {
 	name: 'Construction project',
 	root: {
 		folder_type: 'simple',
-		path: '/Construction/2022/',
+		path: '/Construction projects/2022/',
 	},
 	sub_folders: [
 		{

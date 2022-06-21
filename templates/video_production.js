@@ -2,7 +2,7 @@ export default {
 	name: 'Video production',
 	root: {
 		folder_type: 'simple',
-		path: '/Projects/2022/',
+		path: '/Media projects/2022/',
 	},
 	sub_folders: [
 		{
