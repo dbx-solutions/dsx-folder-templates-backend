@@ -6,18 +6,33 @@ export default {
 	},
 	sub_folders: [
 		{
-			name: 'Plans',
+			name: 'Planning',
 		},
 		{
-			name: 'Images',
+			name: 'Contracts',
 		},
 		{
-			name: 'Externals',
+			name: 'Onsite images',
+		},
+		{
+			name: 'Design',
+		},
+		{
+			name: 'Quality',
+		},
+		{
+			name: 'Health and safety',
+		},
+		{
+			name: 'Completion stage',
+		},
+		{
+			name: 'Tenders',
 			tags: ['external'],
 			file_request: { title: 'External content' },
 		},
 		{
-			name: 'Finances',
+			name: 'Finance',
 			tags: ['confidential'],
 		},
 	],

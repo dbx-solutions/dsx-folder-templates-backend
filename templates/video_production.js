@@ -6,7 +6,7 @@ export default {
 	},
 	sub_folders: [
 		{
-			name: 'Images',
+			name: 'Assets',
 		},
 		{
 			name: 'Clips',
@@ -26,6 +26,15 @@ export default {
 					tags: ['edited'],
 				},
 			],
+		},
+		{
+			name: 'Copy',
+		},
+		{
+			name: 'Images',
+		},
+		{
+			name: 'Contracts',
 		},
 	],
 };

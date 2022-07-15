@@ -3,11 +3,7 @@ import fs from 'fs';
 import { routes } from './routes.js';
 import * as config from './config.js';
 import templates from '../../templates/templates.js';
-import {
-	getAuthTokenFromCode,
-	getAuthUrl,
-	storeAuthToken,
-} from '../auth/auth.js';
+import { getAuthTokenFromCode, getAuthUrl, storeAuthToken } from '../auth/auth.js';
 import { createStructureFromTemplate } from '../../src/structure/structure.js';
 import { listTemplates } from '../../src/template/template.js';
 import { listMembers } from '../../node_modules/dsx-core/src/resources/dropbox/team/member/member.js';
@@ -43,19 +39,14 @@ export function createRoutes() {
 		const { templateName, rootName } = req.query;
 
 		fs.readFile('token.txt', 'utf8', function (err, authToken) {
-			createStructureFromTemplate(
-				templates[templateName],
-				rootName,
-				authToken.toString(),
-				config.USER_ID
-			);
+			createStructureFromTemplate(templates[templateName], rootName, authToken.toString(), config.USER_ID);
 		});
 	});
 
 	app.get('/members', (req, res) => {
 		fs.readFile('token.txt', 'utf8', function (err, authToken) {
 			const dbx = createDbxAsTeam(authToken.toString());
-			const members = listMembers(dbx).then((members) => {
+			listMembers(dbx).then((members) => {
 				console.log(members);
 			});
 		});
